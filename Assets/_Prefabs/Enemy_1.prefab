@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7080627726371969219}
   - component: {fileID: 3043875467262662503}
   - component: {fileID: 3933274578782985179}
+  - component: {fileID: -8211362632515137093}
+  - component: {fileID: 6876620584898621283}
   m_Layer: 9
   m_Name: Enemy_1
   m_TagString: Untagged
@@ -51,6 +53,7 @@ MonoBehaviour:
   fireRate: 0.3
   health: 10
   score: 100
+  powerUpDropChance: 0.5
   waveFrequency: 2
   waveWidth: 4
   waveRotY: 45
@@ -86,6 +89,57 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showingColor: 0
   blinkCompleteTime: 0
+  ignoreOnCollisionEnter: 0
+--- !u!54 &-8211362632515137093
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071440559374377767}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 120
+  m_CollisionDetection: 0
+--- !u!136 &6876620584898621283
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071440559374377767}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: -20, z: 0}
 --- !u!1001 &7995097421618977603
 PrefabInstance:
   m_ObjectHideFlags: 0

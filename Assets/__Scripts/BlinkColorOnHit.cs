@@ -11,6 +11,7 @@ public class BlinkColorOnHit : MonoBehaviour
     [Header("Dynamic")]
     public bool showingColor = false;
     public float blinkCompleteTime; // Time to stop showing the color
+    public bool ignoreOnCollisionEnter = false;
 
     private Material[] materials; // All the Materials of this and its children
     private Color[] originalColors;
@@ -33,6 +34,7 @@ public class BlinkColorOnHit : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
+        if ( ignoreOnCollisionEnter ) return;
         // Check for collisions with ProjectileHero
         ProjectileHero p = coll.gameObject.GetComponent<ProjectileHero>();
         if ( p != null ) {
@@ -47,7 +49,7 @@ public class BlinkColorOnHit : MonoBehaviour
     ///Sets the Albedo color (i.e., the main color) of all materials in the materials array to blinkColor, 
     /// sets showingColor to ture, and set the time that the colros shoul be reverted.
     /// </summary>
-    void SetColors() {
+    public void SetColors() {
         foreach (Material m in materials) {
             m.color = blinkColor;
         }
